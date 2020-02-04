@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client'
 
-const url = '192.168.1.70:4000'
-// const url = 'localhost:4000'
+//const url = [raspberry ip][port]
+const url = 'localhost:4000'
 
 const ToggleItem = ({id,value,handleClick}) => 
     <input 
