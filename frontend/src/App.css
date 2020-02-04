@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+html,body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right bottom,rgb(136, 0, 57),rgb(61, 143, 250));
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+    display: flex;
+    flex: 1;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0.5rem;
+    flex: 1;
+    max-width: 360px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#root > ul > h1 {
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#root > ul > li {
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 2px 0;
+    box-shadow: 0 1px 1px 0 black;
+    font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root > ul > li > input[type = "checkbox"] {
+    background-color: rgb(136, 0, 57);
+    appearance: none;
+    width: 2rem;
+    height: 1rem;
+    transition: .2s;
+    border-radius: 1rem;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px 0 black;
+}
+
+#root > ul > li > input[type = "checkbox"]:checked {
+    background-color: rgb(61, 143, 250);
+}
+
+#root > ul > li > input[type = "checkbox"]::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    transform: scale(1.1);
+    box-shadow: 0 1px 1px 0 black;
+}
+
+#root > ul > li > input[type = "checkbox"]:checked::after{
+    right: 0;
 }

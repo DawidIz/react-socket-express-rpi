@@ -1,54 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client'
-import styled from 'styled-components'
 
-const url = 'http://192.168.1.210:4000'
-
-const List = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 1rem;
-
-    & > li {
-        background-color: #771177;
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        margin: 1px 0;
-    }
-
-    & > li > input[type = "checkbox"] {
-        background-color: white;
-        appearance: none;
-        width: 2rem;
-        height: 1rem;
-        transition: .5s;
-        border-radius: 1rem;
-        position: relative;
-        outline: none;
-    }
-
-    & > li > input[type = "checkbox"]:checked {
-        background-color: lightblue;
-    }
-
-    & > li > input[type = "checkbox"]::after{
-        content: '';
-        position: absolute;
-        width: 1rem;
-        height: 1rem;
-        background-color: white;
-        border-radius: 1rem;
-        transform: scale(1.2)
-    }
-
-    & > li > input[type = "checkbox"]:checked::after{
-        right: 0;
-    }
-
-`
+const url = '192.168.1.70:4000'
+// const url = 'localhost:4000'
 
 const ToggleItem = ({id,value,handleClick}) => 
     <input 
@@ -87,8 +41,8 @@ const ToggleMenu = props => {
         socket.emit('toggle value', id)
     }
 
-return <List>
-    xd
+return <ul>
+    <h1>Menu</h1>
     {data.map(item => 
         <li key = {item.id}>
             { item.text }
@@ -98,7 +52,7 @@ return <List>
                 handleClick = { handleClick }
             />
         </li>)}
-    </List>
+    </ul>
 }
 
 export default ToggleMenu

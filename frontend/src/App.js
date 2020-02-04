@@ -4,9 +4,9 @@ import ToggleMenu from './components/ToggleMenu';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <ToggleMenu />
-    </div>
+    </>
   );
 }
 
